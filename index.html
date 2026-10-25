@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TJ Slavoj Davle</title>
+<meta name="description" content="TJ Slavoj Davle, z.s. – sportovní spolek v Davli. Kopaná, stolní tenis, šipky, rekreační tenis, turistika.">
+<link rel="icon" href="img/2022/08/Kopie-ERB-e1661535519449.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #c8102e;
+    --red-dark: #9e0c24;
+    --blue: #1d5fa8;
+    --bg: #ffffff;
+    --bg-alt: #f4f6f9;
+    --surface: #ffffff;
+    --text: #15191f;
+    --muted: #5b6573;
+    --line: #e2e6ec;
+    --header-bg: rgba(255,255,255,.92);
+    --hero-from: #0f2c52;
+    --hero-to: #1d5fa8;
+    --media-bg: #e8edf4;
+    --todo-bg: #fff4d6;
+    --todo-text: #7a5200;
+    --header-h: 68px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1318;
+      --bg-alt: #161b22;
+      --surface: #1b2129;
+      --text: #e8ecf1;
+      --muted: #9aa5b3;
+      --line: #2a323d;
+      --header-bg: rgba(15,19,24,.92);
+      --media-bg: #232b36;
+      --todo-bg: #3a2e0f;
+      --todo-text: #f5d27a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1318;
+    --bg-alt: #161b22;
+    --surface: #1b2129;
+    --text: #e8ecf1;
+    --muted: #9aa5b3;
+    --line: #2a323d;
+    --header-bg: rgba(15,19,24,.92);
+    --media-bg: #232b36;
+    --todo-bg: #3a2e0f;
+    --todo-text: #f5d27a;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--blue); }
+  h1, h2, h3 { font-family: "Barlow Condensed", Inter, sans-serif; line-height: 1.1; margin: 0 0 .4em; letter-spacing: .01em; }
+  h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); text-transform: uppercase; }
+  h3 { font-size: 1.3rem; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    height: var(--header-h);
+    background: var(--header-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 100%; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+  .brand img { width: 40px; height: 40px; border-radius: 6px; background: #fff; }
+  .brand span { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 1.4rem; text-transform: uppercase; white-space: nowrap; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; }
+  nav a {
+    display: block; padding: 8px 10px; border-radius: 6px;
+    text-decoration: none; color: var(--text); font-weight: 500; font-size: .92rem; white-space: nowrap;
+  }
+  nav a:hover { background: var(--bg-alt); }
+  nav a.active { background: var(--red); color: #fff; }
+  .menu-btn {
+    display: none; background: none; border: 1px solid var(--line); color: var(--text);
+    border-radius: 6px; padding: 6px 10px; font-size: 1.2rem; cursor: pointer;
+  }
+  @media (max-width: 1100px) {
+    .menu-btn { display: block; }
+    nav {
+      position: absolute; top: var(--header-h); left: 0; right: 0;
+      background: var(--bg); border-bottom: 1px solid var(--line);
+      display: none; max-height: calc(100vh - var(--header-h)); overflow-y: auto;
+    }
+    nav.open { display: block; }
+    nav ul { flex-direction: column; padding: 8px 16px 16px; }
+    nav a { padding: 12px; }
+  }
+
+  section { scroll-margin-top: var(--header-h); }
+
+  /* Hero */
+  .hero {
+    background:
+      linear-gradient(135deg, rgba(15,44,82,.88), rgba(29,95,168,.72)),
+      url("img/2022/08/0d26a90d-5990-4980-83ff-2826f9a20b02.jpeg") center / cover;
+    color: #fff; padding: 64px 0; text-align: center;
+  }
+  .hero img { width: 112px; height: 112px; margin: 0 auto 20px; border-radius: 16px; background: #fff; padding: 6px; }
+  .hero h1 { font-size: clamp(2.4rem, 8vw, 4.5rem); text-transform: uppercase; }
+  .hero p { font-size: 1.1rem; max-width: 620px; margin: 0 auto; opacity: .9; }
+
+  /* Oddíly – řádek: obrázek vlevo, text vpravo */
+  .oddily { padding: 48px 0; }
+  .oddil {
+    display: grid; grid-template-columns: 300px 1fr;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    overflow: hidden; margin-bottom: 24px;
+  }
+  .oddil-media {
+    background: var(--media-bg); min-height: 220px;
+    display: flex; align-items: center; justify-content: center; font-size: 4.5rem;
+  }
+  .oddil-media img { width: 100%; height: 100%; object-fit: cover; }
+  .oddil-body { padding: 24px 28px; }
+  .oddil-body .tag { color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
+  .oddil-body p { color: var(--muted); margin: 0 0 12px; }
+  .info { list-style: none; padding: 0; margin: 12px 0 0; }
+  .info li { display: flex; gap: 12px; padding: 7px 0; border-top: 1px solid var(--line); }
+  .info b { min-width: 90px; }
+  @media (max-width: 720px) {
+    .oddil { grid-template-columns: 1fr; }
+    .oddil-media { min-height: 180px; }
+    .oddil-body { padding: 20px; }
+  }
+
+  .btn {
+    display: inline-block; padding: 8px 16px; border-radius: 8px; background: var(--red); color: #fff;
+    text-decoration: none; font-weight: 600; font-size: .92rem; margin: 12px 8px 0 0;
+  }
+  .btn:hover { background: var(--red-dark); }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn.ghost:hover { background: var(--bg-alt); }
+
+  .todo {
+    display: inline-block; background: var(--todo-bg); color: var(--todo-text);
+    font-size: .8rem; font-weight: 600; padding: 1px 8px; border-radius: 4px;
+  }
+
+  /* Partneři */
+  .partneri { background: var(--bg-alt); padding: 56px 0; }
+  .partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .partner {
+    display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px; text-decoration: none; color: var(--text);
+  }
+  a.partner:hover { border-color: var(--blue); }
+  .partner strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 1.4rem; text-transform: uppercase; white-space: nowrap; }
+  .partner small { color: var(--muted); }
+
+  /* Galerie */
+  .galerie { padding: 56px 0; }
+  .galerie h3 { margin-top: 32px; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; margin-top: 12px; }
+  .gallery a { display: block; border-radius: 8px; overflow: hidden; }
+  .gallery img { aspect-ratio: 4/3; object-fit: cover; width: 100%; transition: transform .2s; }
+  .gallery a:hover img { transform: scale(1.04); }
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: 95vw; max-height: 95vh; }
+  .lightbox::backdrop { background: rgba(0,0,0,.85); }
+  .lightbox img { max-width: 95vw; max-height: 90vh; border-radius: 8px; }
+
+  /* Kontakt */
+  .kontakt { padding: 56px 0; }
+  .kontakt .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 720px) { .kontakt .grid { grid-template-columns: 1fr; } }
+
+  footer { background: #0b1626; color: #c9d2de; padding: 32px 0; font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#uvod">
+      <img src="img/2022/08/Kopie-ERB-e1661535519449.jpg" alt="Erb TJ Slavoj Davle">
+      <span>Slavoj Davle</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+    <nav>
+      <ul>
+        <li><a href="#kopana">Kopaná</a></li>
+        <li><a href="#stolni-tenis-mladez">Stolní tenis – mládež</a></li>
+        <li><a href="#stolni-tenis-muzi">Stolní tenis – muži</a></li>
+        <li><a href="#sipky">Šipky</a></li>
+        <li><a href="#tenis">Tenis</a></li>
+        <li><a href="#turistika">Turistika</a></li>
+        <li><a href="#partneri">Partneři</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="uvod" class="hero">
+    <div class="wrap">
+      <img src="img/2022/08/382269_4453322135645_1554899474_n.jpg" alt="Erb TJ Slavoj Davle">
+      <h1>TJ Slavoj Davle</h1>
+      <p>Tělovýchovná jednota v Davli. Sport pro děti, dospělé i veterány – přidejte se k nám.</p>
+    </div>
+  </section>
+
+  <div class="oddily">
+    <div class="wrap">
+
+      <!--
+        ODDÍL: každý oddíl je jeden <section class="oddil">.
+        Nový oddíl = zkopíruj blok, změň id, obrázek a texty, přidej odkaz do <nav>.
+        Fotku dej do .oddil-media jako <img src="img/nazev.jpg" alt="...">.
+      -->
+
+      <section class="oddil" id="kopana">
+        <div class="oddil-media">
+          <img src="img/2024/04/IMG_8625.jpg" alt="A-tým mužů TJ Slavoj Davle" loading="lazy">
+        </div>
+        <div class="oddil-body">
+          <span class="tag">Muži</span>
+          <h2>Oddíl kopané</h2>
+          <p>A-tým mužů hraje mistrovské zápasy na domácím hřišti v Davli.</p>
+          <ul class="info">
+            <li><b>Adresa</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Vedoucí</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Kontakt</b><span><span class="todo">DOPLNIT</span></span></li>
+          </ul>
+          <a class="btn" href="https://www.fotbal.cz/souteze/turnaje/table/3ed74217-c9d2-4cd2-94c4-630b64ebb2c7" target="_blank" rel="noopener">Tabulka</a>
+          <a class="btn ghost" href="img/2026/09/rozpis_slavoj_podzim2026.png" target="_blank" rel="noopener">Rozpis podzim 2026</a>
+          <details style="margin-top:12px">
+            <summary>Starší rozpisy</summary>
+            <ul>
+              <li><a href="img/2026/03/ROZPIS_JARO2026.png" target="_blank">Jaro 2026</a> (<a href="img/2026/03/ROZPIS_JARO2026.pdf" target="_blank">PDF</a>)</li>
+              <li><a href="img/2025/09/PODZIM2025-1.jpg" target="_blank">Podzim 2025</a> (<a href="img/2026/03/rozpis_slavoj_podzim2025.ods" target="_blank">ODS</a>)</li>
+              <li><a href="img/2025/04/rozpis__-1.jpg" target="_blank">Jaro 2025</a></li>
+              <li><a href="img/2025/03/rozpis-1.jpg" target="_blank">Rozpis 2025 (březen)</a></li>
+              <li><a href="img/2024/10/PODZIM_2024-1.jpg" target="_blank">Podzim 2024</a> (<a href="img/2024/10/PODZIM_2024.pdf" target="_blank">PDF</a>)</li>
+              <li><a href="img/2024/04/34c849d8-70bb-49a0-b636-fe97a285f5d9.jpeg" target="_blank">Rozpis 2024 (jaro)</a></li>
+              <li><a href="img/2022/08/Rozpis-SlavojDavle_-2022_23_3Final.jpg" target="_blank">Sezóna 2022/23</a></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="oddil" id="stolni-tenis-mladez">
+        <div class="oddil-media" aria-hidden="true">🏓</div>
+        <div class="oddil-body">
+          <span class="tag">Mládež</span>
+          <h2>Oddíl stolního tenisu</h2>
+          <p><span class="todo">DOPLNIT</span> krátký popis – tréninky, věk, soutěže</p>
+          <ul class="info">
+            <li><b>Adresa</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Vedoucí</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Kontakt</b><span><span class="todo">DOPLNIT</span></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="oddil" id="stolni-tenis-muzi">
+        <div class="oddil-media" aria-hidden="true">🏓</div>
+        <div class="oddil-body">
+          <span class="tag">Muži</span>
+          <h2>Oddíl stolního tenisu</h2>
+          <p><span class="todo">DOPLNIT</span> krátký popis – družstva, soutěže, tréninky</p>
+          <ul class="info">
+            <li><b>Adresa</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Vedoucí</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Kontakt</b><span><span class="todo">DOPLNIT</span></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="oddil" id="sipky">
+        <div class="oddil-media" aria-hidden="true">🎯</div>
+        <div class="oddil-body">
+          <span class="tag">Šipky</span>
+          <h2>Oddíl šipkařský</h2>
+          <p><span class="todo">DOPLNIT</span> krátký popis – kde se hraje, soutěže</p>
+          <ul class="info">
+            <li><b>Adresa</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Vedoucí</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Kontakt</b><span><span class="todo">DOPLNIT</span></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="oddil" id="tenis">
+        <div class="oddil-media" aria-hidden="true">🎾</div>
+        <div class="oddil-body">
+          <span class="tag">Rekreační</span>
+          <h2>Oddíl rekreačního tenisu</h2>
+          <p>Tenisové kurty ve sportovním areálu v Davli. <span class="todo">DOPLNIT</span> rezervace, ceník</p>
+          <ul class="info">
+            <li><b>Adresa</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Vedoucí</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Kontakt</b><span><span class="todo">DOPLNIT</span></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="oddil" id="turistika">
+        <div class="oddil-media" aria-hidden="true">🥾</div>
+        <div class="oddil-body">
+          <span class="tag">Turistika</span>
+          <h2>Oddíl turistiky</h2>
+          <p><span class="todo">DOPLNIT</span> krátký popis – výlety, akce</p>
+          <ul class="info">
+            <li><b>Adresa</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Vedoucí</b><span><span class="todo">DOPLNIT</span></span></li>
+            <li><b>Kontakt</b><span><span class="todo">DOPLNIT</span></span></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <section id="partneri" class="partneri">
+    <div class="wrap">
+      <h2>Partnerské spolky a oddíly</h2>
+      <div class="partner-grid">
+        <a class="partner" href="http://www.judodavle.cz/" target="_blank" rel="noopener"><strong>Judo Davle</strong><small>judodavle.cz</small></a>
+        <div class="partner"><strong>FBK Davle</strong><small>Florbal</small></div>
+        <a class="partner" href="http://pfa.cz/" target="_blank" rel="noopener"><strong>PFA</strong><small>Povltavská fotbalová akademie</small></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" class="galerie">
+    <div class="wrap">
+      <h2>Galerie</h2>
+
+      <h3>Náš areál a lidé</h3>
+      <div class="gallery">
+        <a href="img/2024/04/IMG_8625.jpg"><img src="img/2024/04/IMG_8625.jpg" alt="A-tým mužů" loading="lazy"></a>
+        <a href="img/2024/04/IMG_8643.jpg"><img src="img/2024/04/IMG_8643.jpg" alt="A-tým mužů" loading="lazy"></a>
+        <a href="img/2024/04/IMG_8452.jpg"><img src="img/2024/04/IMG_8452.jpg" alt="Fotbalové hřiště" loading="lazy"></a>
+        <a href="img/2024/04/IMG_8453.jpg"><img src="img/2024/04/IMG_8453.jpg" alt="Fotbalové hřiště" loading="lazy"></a>
+        <a href="img/2022/08/1505409_10202568636641613_6586215892599658440_n.jpg"><img src="img/2022/08/1505409_10202568636641613_6586215892599658440_n.jpg" alt="Hřiště s nápisem Slavoj Davle" loading="lazy"></a>
+        <a href="img/2022/08/0d26a90d-5990-4980-83ff-2826f9a20b02.jpeg"><img src="img/2022/08/0d26a90d-5990-4980-83ff-2826f9a20b02.jpeg" alt="Pohled na hřiště" loading="lazy"></a>
+        <a href="img/2022/08/DSC06519.jpg"><img src="img/2022/08/DSC06519.jpg" alt="Hřiště" loading="lazy"></a>
+        <a href="img/2022/08/DSC06501.jpg"><img src="img/2022/08/DSC06501.jpg" alt="Hřiště" loading="lazy"></a>
+        <a href="img/2022/12/Slavoj_Rozlucka.jpg"><img src="img/2022/12/Slavoj_Rozlucka.jpg" alt="Rozlučka se sezónou" loading="lazy"></a>
+        <a href="img/2024/06/Obrazek-WhatsApp-2024-06-08-v-13.14.44_5a62259e.jpg"><img src="img/2024/06/Obrazek-WhatsApp-2024-06-08-v-13.14.44_5a62259e.jpg" alt="Výlet – Kamenný Přívoz" loading="lazy"></a>
+      </div>
+
+      <h3>100 let Slavoje Davle</h3>
+      <p>Děkujeme všem, kteří s námi oslavili významné jubileum. Více fotek na <a href="https://www.rajce.idnes.cz/zelidavle/album/100-let-slavoje-davle" target="_blank" rel="noopener">Rajčeti</a>.</p>
+      <div class="gallery">
+        <a href="img/2024/05/Plakat_TJ_Slavoj_Davle_100let_final_page-0001.jpg"><img src="img/2024/05/Plakat_TJ_Slavoj_Davle_100let_final_page-0001.jpg" alt="Plakát 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9052.jpg"><img src="img/2024/10/IMG_9052.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9054.jpg"><img src="img/2024/10/IMG_9054.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9056.jpg"><img src="img/2024/10/IMG_9056.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9057.jpg"><img src="img/2024/10/IMG_9057.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9074.jpg"><img src="img/2024/10/IMG_9074.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9081.jpg"><img src="img/2024/10/IMG_9081.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9082.jpg"><img src="img/2024/10/IMG_9082.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9095.jpg"><img src="img/2024/10/IMG_9095.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9153.jpg"><img src="img/2024/10/IMG_9153.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9302.jpg"><img src="img/2024/10/IMG_9302.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9317.jpg"><img src="img/2024/10/IMG_9317.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9319.jpg"><img src="img/2024/10/IMG_9319.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9348.jpg"><img src="img/2024/10/IMG_9348.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9397.jpg"><img src="img/2024/10/IMG_9397.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9433.jpg"><img src="img/2024/10/IMG_9433.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9439.jpg"><img src="img/2024/10/IMG_9439.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9482.jpg"><img src="img/2024/10/IMG_9482.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9493.jpg"><img src="img/2024/10/IMG_9493.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9555.jpg"><img src="img/2024/10/IMG_9555.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9726.jpg"><img src="img/2024/10/IMG_9726.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+        <a href="img/2024/10/IMG_9730.jpg"><img src="img/2024/10/IMG_9730.jpg" alt="Oslavy 100 let" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="lightbox"><img alt=""></dialog>
+
+  <section id="kontakt" class="kontakt">
+    <div class="wrap grid">
+      <div>
+        <h2>Kontakt</h2>
+        <ul class="info">
+          <li><b>Spolek</b><span>TJ Slavoj Davle, z.s.</span></li>
+          <li><b>Sídlo</b><span>Školní 189, 252 06 Davle</span></li>
+          <li><b>IČO</b><span>75107686</span></li>
+          <li><b>E-mail</b><span><span class="todo">DOPLNIT</span></span></li>
+          <li><b>Telefon</b><span><span class="todo">DOPLNIT</span></span></li>
+        </ul>
+        <a class="btn ghost" href="http://www.facebook.com/pages/Slavoj-Davle/79670234614" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn ghost" href="http://zelidavle.rajce.idnes.cz/" target="_blank" rel="noopener">Fotogalerie</a>
+      </div>
+      <div>
+        <iframe title="Mapa – Davle" src="https://www.openstreetmap.org/export/embed.html?bbox=14.38%2C49.88%2C14.41%2C49.895&amp;layer=mapnik"
+          style="width:100%;aspect-ratio:4/3;border:1px solid var(--line);border-radius:12px" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> TJ Slavoj Davle, z.s. · IČO 75107686</span>
+    <span>Školní 189, 252 06 Davle</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const nav = document.querySelector('nav');
+  const btn = document.querySelector('.menu-btn');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', e => {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }
+  });
+
+  // Galerie – zvětšení fotky po kliknutí
+  const lightbox = document.querySelector('.lightbox');
+  document.querySelectorAll('.gallery a').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    lightbox.querySelector('img').src = a.href;
+    lightbox.showModal();
+  }));
+  lightbox.addEventListener('click', () => lightbox.close());
+
+  // Zvýraznění aktivní sekce v menu
+  const links = [...nav.querySelectorAll('a')];
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section[id]').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
