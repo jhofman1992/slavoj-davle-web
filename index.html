@@ -140,7 +140,8 @@
   .oddil-body p { color: var(--muted); margin: 0 0 12px; }
   .info { list-style: none; padding: 0; margin: 12px 0 0; }
   .info li { display: flex; gap: 12px; padding: 7px 0; border-top: 1px solid var(--line); }
-  .info b { min-width: 90px; }
+  .info b { min-width: 90px; flex-shrink: 0; }
+  .kontakt .info b { min-width: 140px; }
   .info span { overflow-wrap: anywhere; }
   @media (max-width: 720px) {
     .oddil { grid-template-columns: 1fr; }
@@ -379,15 +380,17 @@
           <li><b>Spolek</b><span>TJ Slavoj Davle, z.s.</span></li>
           <li><b>Sídlo</b><span>Školní 189, 252 06 Davle</span></li>
           <li><b>IČO</b><span>75107686</span></li>
-          <li><b>E-mail</b><span><span class="todo">DOPLNIT</span></span></li>
-          <li><b>Telefon</b><span><span class="todo">DOPLNIT</span></span></li>
+          <li><b>E-mail</b><span><a href="mailto:predseda@slavojdavle.cz">predseda@slavojdavle.cz</a></span></li>
+          <li><b>Datová schránka</b><span>gd6upub</span></li>
+          <li><b>Bankovní spojení</b><span>389154349/0800</span></li>
         </ul>
         <a class="btn ghost" href="http://www.facebook.com/pages/Slavoj-Davle/79670234614" target="_blank" rel="noopener">Facebook</a>
         <a class="btn ghost" href="http://zelidavle.rajce.idnes.cz/" target="_blank" rel="noopener">Fotogalerie</a>
       </div>
       <div>
-        <iframe title="Mapa – Davle" src="https://www.openstreetmap.org/export/embed.html?bbox=14.38%2C49.88%2C14.41%2C49.895&amp;layer=mapnik"
+        <iframe title="Mapa – Školní 189, Davle" src="https://www.openstreetmap.org/export/embed.html?bbox=14.3913%2C49.8895%2C14.4093%2C49.8975&amp;layer=mapnik&amp;marker=49.8934713%2C14.400325"
           style="width:100%;aspect-ratio:4/3;border:1px solid var(--line);border-radius:12px" loading="lazy"></iframe>
+        <a class="btn ghost" href="https://www.openstreetmap.org/?mlat=49.8934713&amp;mlon=14.4003250#map=17/49.89347/14.40033" target="_blank" rel="noopener">Větší mapa</a>
       </div>
     </div>
   </section>
