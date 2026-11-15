@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TJ Slavoj Davle</title>
-<meta name="description" content="TJ Slavoj Davle, z.s. – sportovní spolek v Davli. Kopaná, stolní tenis, šipky, rekreační tenis, turistika.">
+<meta name="description" content="TJ Slavoj Davle, z.s. – sportovní spolek v Davli. Kopaná, stolní tenis, šipky, rekreační tenis.">
 <link rel="icon" href="img/2022/08/Kopie-ERB-e1661535519449.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,6 +133,8 @@
     display: flex; align-items: center; justify-content: center; font-size: 4.5rem;
   }
   .oddil-media img { width: 100%; height: 100%; object-fit: cover; }
+  .oddil-media.logo { padding: 24px; }
+  .oddil-media.logo img { width: auto; height: auto; max-width: 200px; max-height: 200px; object-fit: contain; }
   .oddil-body { padding: 24px 28px; }
   .oddil-body .tag { color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
   .oddil-body p { color: var(--muted); margin: 0 0 12px; }
@@ -205,7 +207,6 @@
         <li><a href="#stolni-tenis-muzi">Stolní tenis – muži</a></li>
         <li><a href="#sipky">Šipky</a></li>
         <li><a href="#tenis">Tenis</a></li>
-        <li><a href="#turistika">Turistika</a></li>
         <li><a href="#partneri">Partneři</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
@@ -230,13 +231,11 @@
       <!--
         ODDÍL: každý oddíl je jeden <section class="oddil">.
         Nový oddíl = zkopíruj blok, změň id, obrázek a texty, přidej odkaz do <nav>.
-        Fotku dej do .oddil-media jako <img src="img/nazev.jpg" alt="...">.
+        Logo dej do .oddil-media.logo jako <img src="img/loga/nazev.png" alt="...">.
       -->
 
       <section class="oddil" id="kopana">
-        <div class="oddil-media">
-          <img src="img/2024/04/IMG_8625.jpg" alt="A-tým mužů TJ Slavoj Davle" loading="lazy">
-        </div>
+        <div class="oddil-media logo"><img src="img/loga/fotbal.png" alt="Logo oddílu kopané" loading="lazy"></div>
         <div class="oddil-body">
           <span class="tag">Muži</span>
           <h2>Oddíl kopané</h2>
@@ -264,7 +263,7 @@
       </section>
 
       <section class="oddil" id="stolni-tenis-mladez">
-        <div class="oddil-media" aria-hidden="true">🏓</div>
+        <div class="oddil-media logo"><img src="img/loga/stolni_tenis.png" alt="Logo oddílu stolního tenisu" loading="lazy"></div>
         <div class="oddil-body">
           <span class="tag">Mládež</span>
           <h2>Oddíl stolního tenisu</h2>
@@ -278,7 +277,7 @@
       </section>
 
       <section class="oddil" id="stolni-tenis-muzi">
-        <div class="oddil-media" aria-hidden="true">🏓</div>
+        <div class="oddil-media logo"><img src="img/loga/stolni_tenis.png" alt="Logo oddílu stolního tenisu" loading="lazy"></div>
         <div class="oddil-body">
           <span class="tag">Muži</span>
           <h2>Oddíl stolního tenisu</h2>
@@ -292,7 +291,7 @@
       </section>
 
       <section class="oddil" id="sipky">
-        <div class="oddil-media" aria-hidden="true">🎯</div>
+        <div class="oddil-media logo"><img src="img/loga/sipky.png" alt="Logo šipkařského oddílu" loading="lazy"></div>
         <div class="oddil-body">
           <span class="tag">Šipky</span>
           <h2>Oddíl šipkařský</h2>
@@ -306,7 +305,7 @@
       </section>
 
       <section class="oddil" id="tenis">
-        <div class="oddil-media" aria-hidden="true">🎾</div>
+        <div class="oddil-media logo"><img src="img/loga/tenis.png" alt="Logo oddílu tenisu" loading="lazy"></div>
         <div class="oddil-body">
           <span class="tag">Rekreační</span>
           <h2>Oddíl rekreačního tenisu</h2>
@@ -319,19 +318,6 @@
         </div>
       </section>
 
-      <section class="oddil" id="turistika">
-        <div class="oddil-media" aria-hidden="true">🥾</div>
-        <div class="oddil-body">
-          <span class="tag">Turistika</span>
-          <h2>Oddíl turistiky</h2>
-          <p><span class="todo">DOPLNIT</span> krátký popis – výlety, akce</p>
-          <ul class="info">
-            <li><b>Adresa</b><span><span class="todo">DOPLNIT</span></span></li>
-            <li><b>Vedoucí</b><span><span class="todo">DOPLNIT</span></span></li>
-            <li><b>Kontakt</b><span><span class="todo">DOPLNIT</span></span></li>
-          </ul>
-        </div>
-      </section>
 
     </div>
   </div>
