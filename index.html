@@ -164,7 +164,9 @@
 
   /* Partneři */
   .partneri { background: var(--bg-alt); padding: 56px 0; }
-  .partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  @media (max-width: 720px) { .partner-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .partner-grid { grid-template-columns: 1fr; } }
   .partner {
     display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
     padding: 20px; text-decoration: none; color: var(--text);
@@ -308,9 +310,12 @@
     <div class="wrap">
       <h2>Partnerské spolky a oddíly</h2>
       <div class="partner-grid">
-        <a class="partner" href="http://www.judodavle.cz/" target="_blank" rel="noopener"><strong>Judo Davle</strong><small>judodavle.cz</small></a>
-        <div class="partner"><strong>FBK Davle</strong><small>Florbal</small></div>
-        <a class="partner" href="http://pfa.cz/" target="_blank" rel="noopener"><strong>PFA</strong><small>Povltavská fotbalová akademie</small></a>
+        <a class="partner" href="https://judodavle.webnode.cz/" target="_blank" rel="noopener"><strong>Judo Davle-Štěchovice</strong><small>judodavle.webnode.cz</small></a>
+        <a class="partner" href="https://www.buldoci-radotin.cz/davle" target="_blank" rel="noopener"><strong>Florbal Davle</strong><small>Buldoci Radotín – pobočka Davle</small></a>
+        <a class="partner" href="https://www.pfa.cz/" target="_blank" rel="noopener"><strong>PFA</strong><small>Povltavská fotbalová akademie</small></a>
+        <a class="partner" href="https://hasicidavle.cz/" target="_blank" rel="noopener"><strong>Hasiči Davle</strong><small>SDH Davle · hasicidavle.cz</small></a>
+        <a class="partner" href="https://www.sdhsloup.cz/" target="_blank" rel="noopener"><strong>Hasiči Sloup</strong><small>SDH Sloup · sdhsloup.cz</small></a>
+        <a class="partner" href="https://vltavan-davle.cz/" target="_blank" rel="noopener"><strong>Vltavan Davle</strong><small>Spolek vltavských plavců · vltavan-davle.cz</small></a>
       </div>
     </div>
   </section>
@@ -376,8 +381,8 @@
           <li><b>Datová schránka</b><span>gd6upub</span></li>
           <li><b>Bankovní spojení</b><span>389154349/0800</span></li>
         </ul>
-        <a class="btn ghost" href="http://www.facebook.com/pages/Slavoj-Davle/79670234614" target="_blank" rel="noopener">Facebook</a>
-        <a class="btn ghost" href="http://zelidavle.rajce.idnes.cz/" target="_blank" rel="noopener">Fotogalerie</a>
+        <a class="btn ghost" href="https://www.facebook.com/pages/Slavoj-Davle/79670234614" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn ghost" href="https://zelidavle.rajce.idnes.cz/" target="_blank" rel="noopener">Fotogalerie</a>
       </div>
       <div>
         <iframe title="Mapa – Školní 189, Davle" src="https://www.openstreetmap.org/export/embed.html?bbox=14.3913%2C49.8895%2C14.4093%2C49.8975&amp;layer=mapnik&amp;marker=49.8934713%2C14.400325"
