@@ -175,6 +175,25 @@
   .partner strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 1.4rem; text-transform: uppercase; white-space: nowrap; }
   .partner small { color: var(--muted); }
 
+  /* Sponzoři */
+  .sponzori { padding: 56px 0; }
+  .sponzori .lead { color: var(--muted); margin: 0 0 24px; }
+  .sponzor-top { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .sponzor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 720px) {
+    .sponzor-top { grid-template-columns: 1fr; }
+    .sponzor-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .sponzor {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 12px; aspect-ratio: 16 / 10; margin: 0;
+  }
+  .sponzor img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .sponzor-top .sponzor { flex-direction: column; aspect-ratio: auto; padding: 16px 16px 20px; }
+  .sponzor-top .sponzor img { height: 120px; }
+  .sponzor-top figcaption { color: #5b6573; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; margin-bottom: 8px; }
+
   /* Galerie */
   .galerie { padding: 56px 0; }
   .galerie h3 { margin-top: 32px; }
@@ -213,6 +232,7 @@
         <li><a href="#sipky">Šipky</a></li>
         <li><a href="#tenis">Tenis</a></li>
         <li><a href="#partneri">Partneři</a></li>
+        <li><a href="#sponzori">Sponzoři</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -320,6 +340,43 @@
         <a class="partner" href="https://hasicidavle.cz/" target="_blank" rel="noopener"><strong>Hasiči Davle</strong><small>SDH Davle · hasicidavle.cz</small></a>
         <a class="partner" href="https://www.sdhsloup.cz/" target="_blank" rel="noopener"><strong>Hasiči Sloup</strong><small>SDH Sloup · sdhsloup.cz</small></a>
         <a class="partner" href="https://vltavan-davle.cz/" target="_blank" rel="noopener"><strong>Vltavan Davle</strong><small>Spolek vltavských plavců · vltavan-davle.cz</small></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sponzori" class="sponzori">
+    <div class="wrap">
+      <h2>Sponzoři davelského sportu</h2>
+      <p class="lead">Děkujeme všem, kteří podporují sport v Davli.</p>
+      <div class="sponzor-top">
+        <figure class="sponzor"><figcaption>Generální sponzor</figcaption><img src="img/sponzori/mestys-davle.png" alt="Městys Davle" title="Městys Davle" loading="lazy"></figure>
+        <figure class="sponzor"><figcaption>Hlavní sponzor</figcaption><img src="img/sponzori/u-dolejsich.png" alt="Řeznictví a uzenářství U Dolejších" title="Řeznictví a uzenářství U Dolejších" loading="lazy"></figure>
+      </div>
+      <div class="sponzor-grid">
+        <figure class="sponzor"><img src="img/sponzori/izomat.png" alt="Izomat stavebniny" title="Izomat stavebniny" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/pfa.png" alt="Povltavská fotbalová akademie" title="Povltavská fotbalová akademie" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/top-fruit.png" alt="TOP-Fruit s.r.o." title="TOP-Fruit s.r.o." loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/dachmont.png" alt="Dachmont s.r.o." title="Dachmont s.r.o." loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/milujeme-tocenou.png" alt="#milujemetočenou" title="#milujemetočenou" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/vinoteka-39.png" alt="Vinotéka 39" title="Vinotéka 39" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/mechenicka-pekarna.png" alt="Měchenická pekárna" title="Měchenická pekárna" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/recka-taverna.png" alt="Řecká taverna Thessaloniki" title="Řecká taverna Thessaloniki" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/neuzil.png" alt="Zemní práce Neužil – autodoprava" title="Zemní práce Neužil – autodoprava" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/podlahy-sucharda.png" alt="Podlahy Sucharda" title="Podlahy Sucharda" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/truhlarstvi-mazel.png" alt="Truhlářství Mazel" title="Truhlářství Mazel" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/zelizko.png" alt="Želízko spol. s r.o." title="Želízko spol. s r.o." loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/autoservis-macho.png" alt="Autoservis Vratislav Macho" title="Autoservis Vratislav Macho" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/potapeci.png" alt="Potapeci.info – Commercial Divers" title="Potapeci.info – Commercial Divers" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/azp.png" alt="AZP" title="AZP" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/macho-reality.png" alt="Macho Reality" title="Macho Reality" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/fh-car.png" alt="F.H.CAR" title="F.H.CAR" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/art-of-home.png" alt="Art of Home" title="Art of Home" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/privategym.png" alt="Soukromé samoobslužné posilovny privategym.cz" title="Soukromé samoobslužné posilovny privategym.cz" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/pizzeria-grado.png" alt="Pizzeria Grado" title="Pizzeria Grado" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/diving-sea-wind.png" alt="Diving Sea Wind Yachting" title="Diving Sea Wind Yachting" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/spirit.png" alt="Spirit sportovní centrum" title="Spirit sportovní centrum" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/tankovna-u-psenicku.png" alt="Tankovna U Pšeničků" title="Tankovna U Pšeničků" loading="lazy"></figure>
+        <figure class="sponzor"><img src="img/sponzori/malirske-prace.png" alt="Kompletní malířské práce" title="Kompletní malířské práce" loading="lazy"></figure>
       </div>
     </div>
   </section>
